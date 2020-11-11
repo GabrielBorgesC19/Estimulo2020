@@ -1,6 +1,17 @@
+import 'dart:convert';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:toast/toast.dart';
+import '../controllers/signup.controller.dart';
 
 class SignupPage extends StatelessWidget {
+  final _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+
+  final _signUpController = SignUpController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,6 +103,7 @@ class SignupPage extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
+              controller: _emailController,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: "E-mail",
@@ -110,6 +122,7 @@ class SignupPage extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
+              controller: _passwordController,
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: InputDecoration(
@@ -153,7 +166,7 @@ class SignupPage extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  onPressed: () {},
+                  onPressed: () => _signUpController.onClickSignUp(_emailController.text, _passwordController.text),
                 ),
               ),
             ),
