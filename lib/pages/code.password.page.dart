@@ -1,7 +1,7 @@
+import 'package:doglife/pages/password.redifined.page.dart';
 import 'package:flutter/material.dart';
-import 'package:doglife/pages/code.password.page.dart';
 
-class ResetPasswordPage extends StatelessWidget {
+class CodePasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +34,7 @@ class ResetPasswordPage extends StatelessWidget {
                         height: 20,
                       ),
                       Text(
-                        "Esqueceu sua senha?",
+                        "Insira o codigo",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 32,
@@ -45,7 +45,7 @@ class ResetPasswordPage extends StatelessWidget {
                         height: 30,
                       ),
                       Text(
-                        "Por favor, informe o E-mail associado a sua conta que enviaremos um link para o mesmo com as instruções para restauração de sua senha.",
+                        "O codigo de redefinicao de senha sera enviado ao seu email em alguns instantes.",
                         style: TextStyle(
                           color: Colors.white70,
                           fontSize: 16,
@@ -56,14 +56,17 @@ class ResetPasswordPage extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(
+                  height: 30,
+                ),
                 Container(
                   width: double.infinity,
                   child: Column(
                     children: <Widget>[
                       TextFormField(
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                          labelText: "E-mail",
+                          labelText: "Insira o codigo",
                           labelStyle: TextStyle(
                             color: Colors.white60,
                             fontWeight: FontWeight.w400,
@@ -73,7 +76,7 @@ class ResetPasswordPage extends StatelessWidget {
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                       SizedBox(
-                        height: 30,
+                        height: 25,
                       ),
                       Container(
                         height: 60,
@@ -95,7 +98,7 @@ class ResetPasswordPage extends StatelessWidget {
                         child: SizedBox.expand(
                           child: FlatButton(
                             child: Text(
-                              "Enviar",
+                              "Confirmar",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -107,7 +110,7 @@ class ResetPasswordPage extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => CodePasswordPage(),
+                                  builder: (context) => PasswordRedifinedPage(),
                                 ),
                               );
                             },

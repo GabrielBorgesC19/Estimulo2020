@@ -5,21 +5,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.deepPurple,
         title: Center(
           child: SizedBox(
             width: 100,
-            child: Image.asset("assets/app-logo.png"),
-          ),
-        ),
-        leading: Container(
-          height: 40,
-          width: 40,
-          decoration: new BoxDecoration(
-            image: new DecorationImage(
-              image: AssetImage("assets/user-picture.png"),
-              fit: BoxFit.fitHeight,
-            ),
+            child: Image.asset("assets/logo.png"),
           ),
         ),
         actions: <Widget>[
@@ -36,58 +26,75 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Container(
-        color: Color(0xFFF2F3F6),
-        child: ListView(
-          children: <Widget>[
-            cardItem(),
-            cardItem(),
-            cardItem(),
-            cardItem(),
-            cardItem(),
-          ],
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/post-picture-001.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+      drawer: Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: Colors
+              .deepPurple, //This will change the drawer background to blue.
+          //other styles
+        ),
+        child: Drawer(
+          child: ListView(
+            children: <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple,
+                ),
+                child: SizedBox(
+                  width: 80,
+                  height: 80,
+                  child: Image.asset("assets/logo.png"),
+                ),
+              ),
+              ListTile(
+                  leading: Icon(Icons.blur_on, color: Colors.white),
+                  title: Text("Trilhas", style: TextStyle(color: Colors.white)),
+                  subtitle: Text("Trilhas de aprendizado",
+                      style: TextStyle(color: Colors.white54)),
+                  trailing: Icon(Icons.arrow_forward, color: Colors.white),
+                  onTap: () {
+                    debugPrint('toquei no drawer');
+                  }),
+              ListTile(
+                  leading: Icon(Icons.device_unknown, color: Colors.white),
+                  title:
+                      Text("Mentoria", style: TextStyle(color: Colors.white)),
+                  subtitle: Text("Mentorias especificas",
+                      style: TextStyle(color: Colors.white54)),
+                  trailing: Icon(Icons.arrow_forward, color: Colors.white),
+                  onTap: () {
+                    Navigator.pop(context);
+                  }),
+              ListTile(
+                  leading: Icon(Icons.forum, color: Colors.white),
+                  title: Text("Acompanhamento",
+                      style: TextStyle(color: Colors.white)),
+                  subtitle: Text("Reports, feedbacks...",
+                      style: TextStyle(color: Colors.white54)),
+                  trailing: Icon(Icons.arrow_forward, color: Colors.white),
+                  onTap: () {
+                    Navigator.pop(context);
+                  }),
+              ListTile(
+                  leading: Icon(Icons.attach_money, color: Colors.white),
+                  title: Text("Solicitar apoio financeiro",
+                      style: TextStyle(color: Colors.white)),
+                  subtitle: Text("Emprestimos",
+                      style: TextStyle(color: Colors.white54)),
+                  trailing: Icon(Icons.arrow_forward, color: Colors.white),
+                  onTap: () {
+                    Navigator.pop(context);
+                  }),
+            ],
+          ),
         ),
       ),
     );
   }
-}
-
-Widget cardItem() {
-  return Card(
-    child: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        const ListTile(
-          leading: CircleAvatar(
-            backgroundImage: NetworkImage(
-                "https://baltaio.blob.core.windows.net/student-images/1edd5c50-bae9-11e8-8eb4-39de303632c1.jpg"),
-          ),
-          title: Text("Bruce Wayne"),
-          subtitle: Text("09/05/2019 18:37"),
-          trailing: Icon(Icons.more_vert),
-        ),
-        Container(
-          child: Image.asset("assets/post-picture-001.png"),
-        ),
-        Container(
-          padding: EdgeInsets.all(10),
-          child: Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ex sem. Praesent elit dui, iaculis at interdum eu, rutrum et mi. "),
-        ),
-        ButtonTheme.bar(
-          child: ButtonBar(
-            children: <Widget>[
-              FlatButton(
-                child: Icon(Icons.favorite),
-                onPressed: () {},
-              ),
-              FlatButton(
-                child: Icon(Icons.share),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
-      ],
-    ),
-  );
 }

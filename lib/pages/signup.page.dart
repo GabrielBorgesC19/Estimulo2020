@@ -1,6 +1,16 @@
+import 'dart:convert';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import '../controllers/signup.controller.dart';
 
 class SignupPage extends StatelessWidget {
+  final _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+
+  final _signUpController = SignUpController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,8 +20,8 @@ class SignupPage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             Container(
-              width: 200,
-              height: 200,
+              width: 100,
+              height: 100,
               alignment: Alignment(0.0, 1.15),
               decoration: new BoxDecoration(
                 image: new DecorationImage(
@@ -20,8 +30,8 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
               child: Container(
-                height: 56,
-                width: 56,
+                height: 18,
+                width: 18,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -41,15 +51,6 @@ class SignupPage extends StatelessWidget {
                     Radius.circular(56),
                   ),
                 ),
-                child: SizedBox.expand(
-                  child: FlatButton(
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
               ),
             ),
             SizedBox(
@@ -59,7 +60,7 @@ class SignupPage extends StatelessWidget {
               // autofocus: true,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
-                labelText: "Nome",
+                labelText: "Nome Completo*",
                 labelStyle: TextStyle(
                   color: Colors.white60,
                   fontWeight: FontWeight.w400,
@@ -68,24 +69,8 @@ class SignupPage extends StatelessWidget {
               ),
               style: TextStyle(
                 fontSize: 20,
+                color: Colors.white,
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextFormField(
-              // autofocus: true,
-              keyboardType: TextInputType.text,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: "Empresa",
-                labelStyle: TextStyle(
-                  color: Colors.white60,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
-                ),
-              ),
-              style: TextStyle(fontSize: 20),
             ),
             SizedBox(
               height: 10,
@@ -94,7 +79,7 @@ class SignupPage extends StatelessWidget {
               // autofocus: true,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                labelText: "E-mail",
+                labelText: "Email*",
                 labelStyle: TextStyle(
                   color: Colors.white60,
                   fontWeight: FontWeight.w400,
@@ -103,6 +88,7 @@ class SignupPage extends StatelessWidget {
               ),
               style: TextStyle(
                 fontSize: 20,
+                color: Colors.white,
               ),
             ),
             SizedBox(
@@ -111,16 +97,91 @@ class SignupPage extends StatelessWidget {
             TextFormField(
               // autofocus: true,
               keyboardType: TextInputType.text,
-              obscureText: true,
               decoration: InputDecoration(
-                labelText: "Senha",
+                labelText: "País*",
                 labelStyle: TextStyle(
                   color: Colors.white60,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextFormField(
+              // autofocus: true,
+              keyboardType: TextInputType.text,
+              decoration: InputDecoration(
+                labelText: "Estado*",
+                labelStyle: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20,
+                ),
+              ),
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextFormField(
+              // autofocus: true,
+              controller: _emailController,
+              keyboardType: TextInputType.text,
+              decoration: InputDecoration(
+                labelText: "Endereco*",
+                labelStyle: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20,
+                ),
+              ),
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextFormField(
+              // autofocus: true,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: "Numero de telefone*",
+                labelStyle: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20,
+                ),
+              ),
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextFormField(
+              // autofocus: true,
+              controller: _passwordController,
+              keyboardType: TextInputType.text,
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: "Senha*",
+                labelStyle: TextStyle(
+                  color: Colors.white60,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20,
+                ),
+              ),
+              style: TextStyle(fontSize: 20, color: Colors.white),
             ),
             SizedBox(
               height: 30,
@@ -153,7 +214,8 @@ class SignupPage extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  onPressed: () {},
+                  onPressed: () => _signUpController.onClickSignUp(
+                      _emailController.text, _passwordController.text),
                 ),
               ),
             ),
@@ -166,7 +228,9 @@ class SignupPage extends StatelessWidget {
               child: FlatButton(
                 child: Text(
                   "Cancelar",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                      color: Colors.white,
+                      decoration: TextDecoration.underline),
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () => Navigator.pop(context, false),

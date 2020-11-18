@@ -1,7 +1,8 @@
+import 'package:doglife/pages/login.page.dart';
 import 'package:flutter/material.dart';
-import 'package:doglife/pages/code.password.page.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class ResetPasswordPage extends StatelessWidget {
+class PasswordRedifinedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,10 +32,10 @@ class ResetPasswordPage extends StatelessWidget {
                         child: Image.asset("assets/reset-password-icon.png"),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 30,
                       ),
                       Text(
-                        "Esqueceu sua senha?",
+                        "Redefinir senha",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 32,
@@ -42,17 +43,8 @@ class ResetPasswordPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 30,
+                        height: 25,
                       ),
-                      Text(
-                        "Por favor, informe o E-mail associado a sua conta que enviaremos um link para o mesmo com as instruções para restauração de sua senha.",
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        ),
-                        textAlign: TextAlign.center,
-                      )
                     ],
                   ),
                 ),
@@ -63,7 +55,19 @@ class ResetPasswordPage extends StatelessWidget {
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          labelText: "E-mail",
+                          labelText: "Digite a nova senha",
+                          labelStyle: TextStyle(
+                            color: Colors.white60,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                          ),
+                        ),
+                        style: TextStyle(fontSize: 20, color: Colors.white),
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          labelText: "Confirme a nova senha",
                           labelStyle: TextStyle(
                             color: Colors.white60,
                             fontWeight: FontWeight.w400,
@@ -73,7 +77,7 @@ class ResetPasswordPage extends StatelessWidget {
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                       SizedBox(
-                        height: 30,
+                        height: 25,
                       ),
                       Container(
                         height: 60,
@@ -95,7 +99,7 @@ class ResetPasswordPage extends StatelessWidget {
                         child: SizedBox.expand(
                           child: FlatButton(
                             child: Text(
-                              "Enviar",
+                              "Confirmar",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -104,10 +108,18 @@ class ResetPasswordPage extends StatelessWidget {
                               textAlign: TextAlign.center,
                             ),
                             onPressed: () {
+                              Fluttertoast.showToast(
+                                  msg: "Sua senha foi redefinida!",
+                                  toastLength: Toast.LENGTH_LONG,
+                                  gravity: ToastGravity.CENTER,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.greenAccent,
+                                  textColor: Colors.black,
+                                  fontSize: 16.0);
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => CodePasswordPage(),
+                                  builder: (context) => LoginPage(),
                                 ),
                               );
                             },
