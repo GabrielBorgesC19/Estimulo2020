@@ -152,6 +152,7 @@ class SignupPage extends StatelessWidget {
             TextFormField(
               // autofocus: true,
               keyboardType: TextInputType.number,
+              controller: _emailController,
               decoration: InputDecoration(
                 labelText: "Numero de telefone*",
                 labelStyle: TextStyle(
