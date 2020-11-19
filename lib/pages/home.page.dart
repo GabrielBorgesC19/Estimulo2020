@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -26,13 +27,88 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/post-picture-001.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
+          alignment: Alignment(0.0, 1.15),
+          child: Column(children: [
+            SizedBox(height: (30)),
+            CarouselSlider(
+              options: CarouselOptions(
+                height: MediaQuery.of(context).size.width,
+                enlargeCenterPage: true,
+                enableInfiniteScroll: true,
+              ),
+              items: [
+                Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                      child: Text("Capacitação Geral",
+                          style: TextStyle(
+                              color: Colors.deepPurple,
+                              fontSize: 25,
+                              fontStyle: FontStyle.italic,
+                              fontFamily: "Raleway"),
+                          textAlign: TextAlign.center),
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.symmetric(horizontal: 5.0),
+                      decoration: BoxDecoration(
+                        image: new DecorationImage(
+                            image: AssetImage(
+                          "assets/capacitacaorosa.png",
+                        )),
+                        shape: BoxShape.circle,
+                        color: Colors.deepPurple,
+                      ),
+                    );
+                  },
+                ),
+                Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                      child: Text("Acompanhamento",
+                          style: TextStyle(
+                              color: Colors.deepPurple,
+                              fontSize: 25,
+                              fontStyle: FontStyle.italic,
+                              fontFamily: "Raleway"),
+                          textAlign: TextAlign.center),
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.symmetric(horizontal: 5.0),
+                      decoration: BoxDecoration(
+                        image: new DecorationImage(
+                            image: AssetImage(
+                          "assets/acompanhamentoverde.png",
+                        )),
+                        shape: BoxShape.circle,
+                        color: Colors.deepPurple,
+                      ),
+                    );
+                  },
+                ),
+                Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                      child: Text("Mentoria Especifica",
+                          style: TextStyle(
+                              color: Colors.deepPurple,
+                              fontSize: 25,
+                              fontStyle: FontStyle.italic,
+                              fontFamily: "Raleway"),
+                          textAlign: TextAlign.center),
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.symmetric(horizontal: 5.0),
+                      decoration: BoxDecoration(
+                        image: new DecorationImage(
+                            image: AssetImage(
+                          "assets/mentoriaazul.png",
+                        )),
+                        shape: BoxShape.circle,
+                        color: Colors.deepPurple,
+                      ),
+                    );
+                  },
+                ),
+              ],
+            )
+          ])),
       drawer: Theme(
         data: Theme.of(context).copyWith(
           canvasColor: Colors
@@ -58,9 +134,7 @@ class HomePage extends StatelessWidget {
                   subtitle: Text("Trilhas de aprendizado",
                       style: TextStyle(color: Colors.white54)),
                   trailing: Icon(Icons.arrow_forward, color: Colors.white),
-                  onTap: () {
-                    debugPrint('toquei no drawer');
-                  }),
+                  onTap: () {}),
               ListTile(
                   leading: Icon(Icons.device_unknown, color: Colors.white),
                   title:
