@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  carousel_slider: ^2.3.1
   http: ^0.12.2
   fluttertoast: ^7.1.1
   flutter:
@@ -82,3 +83,14 @@ flutter:
     - assets/user-picture.png
     - assets/app-logo.png
     - assets/post-picture-001.png
+    - assets/acompanhamentoverde.png
+    - assets/profile-picture.gif
+    - assets/mentoriaazul.png
+    - assets/capacitacaorosa.png
+    
+  fonts:
+     - family: Raleway
+       fonts:
+        - asset: assets/fonts/Raleway-Regular.ttf
+        - asset: assets/fonts/Raleway-Bold.ttf
+           

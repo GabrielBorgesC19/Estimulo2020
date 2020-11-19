@@ -194,7 +194,7 @@ class SignupPage extends StatelessWidget {
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
             SizedBox(
-              height: 30,
+              height: 15,
             ),
             Container(
               height: 60,
@@ -239,18 +239,20 @@ class SignupPage extends StatelessWidget {
               height: 5,
             ),
             Container(
-              height: 40,
-              alignment: Alignment.center,
-              child: FlatButton(
-                child: Text(
-                  "Cancelar",
-                  style: TextStyle(
-                      color: Colors.white,
-                      decoration: TextDecoration.underline),
-                  textAlign: TextAlign.center,
-                ),
-                onPressed: () => Navigator.pop(context, false),
-              ),
+                height: 30,
+                alignment: Alignment.center,
+                child: FlatButton(
+                  child: Text(
+                    "Cancelar",
+                    style: TextStyle(
+                        color: Colors.white,
+                        decoration: TextDecoration.underline),
+                    textAlign: TextAlign.center,
+                  ),
+                  onPressed: () => Navigator.pop(context, false),
+                )),
+            SizedBox(
+              height: 20,
             ),
           ],
         ),
