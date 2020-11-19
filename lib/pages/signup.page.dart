@@ -6,8 +6,13 @@ import 'package:http/http.dart' as http;
 import '../controllers/signup.controller.dart';
 
 class SignupPage extends StatelessWidget {
-  final _passwordController = TextEditingController();
   final _emailController = TextEditingController();
+  final _nameController = TextEditingController();
+  final _countryController = TextEditingController();
+  final _stateController = TextEditingController();
+  final _addressController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   final _signUpController = SignUpController();
 
@@ -58,6 +63,7 @@ class SignupPage extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
+              controller: _nameController,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 labelText: "Nome Completo*",
@@ -77,6 +83,7 @@ class SignupPage extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
+              controller: _emailController,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: "Email*",
@@ -96,6 +103,7 @@ class SignupPage extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
+              controller: _countryController,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 labelText: "País*",
@@ -112,6 +120,7 @@ class SignupPage extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
+              controller: _stateController,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 labelText: "Estado*",
@@ -131,7 +140,7 @@ class SignupPage extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
-              controller: _emailController,
+              controller: _addressController,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 labelText: "Endereco*",
@@ -152,7 +161,7 @@ class SignupPage extends StatelessWidget {
             TextFormField(
               // autofocus: true,
               keyboardType: TextInputType.number,
-              controller: _emailController,
+              controller: _phoneController,
               decoration: InputDecoration(
                 labelText: "Numero de telefone*",
                 labelStyle: TextStyle(
@@ -215,8 +224,14 @@ class SignupPage extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  onPressed: () => _signUpController.onClickSignUp(
-                      _emailController.text, _passwordController.text),
+                  onPressed: () => _signUpController.onClickSignUp(context,
+                      _emailController.text,
+                      _passwordController.text,
+                      _nameController.text,
+                      _phoneController.text,
+                      _countryController.text,
+                      _stateController.text,
+                      _addressController.text),
                 ),
               ),
             ),

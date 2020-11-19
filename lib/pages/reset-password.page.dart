@@ -1,7 +1,10 @@
+import 'package:doglife/controllers/reset-password.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:doglife/pages/code.password.page.dart';
 
 class ResetPasswordPage extends StatelessWidget {
+  final _resetPasswordController = new ResetPasswordController(); 
+  final _emailController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +64,7 @@ class ResetPasswordPage extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       TextFormField(
+                        controller: _emailController,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           labelText: "E-mail",
@@ -104,12 +108,7 @@ class ResetPasswordPage extends StatelessWidget {
                               textAlign: TextAlign.center,
                             ),
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => CodePasswordPage(),
-                                ),
-                              );
+                              _resetPasswordController.onClickReset(context, _emailController.text);
                             },
                           ),
                         ),

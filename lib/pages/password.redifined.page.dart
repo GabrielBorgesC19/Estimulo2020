@@ -1,8 +1,17 @@
+import 'package:doglife/controllers/password.redefined.controller.dart';
 import 'package:doglife/pages/login.page.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class PasswordRedifinedPage extends StatelessWidget {
+  final String emailAddress;
+  final String recoveryCode;
+  final _passwordController = new TextEditingController();
+  final _verifyPasswordController = new TextEditingController();
+
+  final _passwordRedefinedController = new RedefinePasswordController();
+
+  PasswordRedifinedPage(this.emailAddress, this.recoveryCode) {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +62,7 @@ class PasswordRedifinedPage extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       TextFormField(
+                        controller: _passwordController,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           labelText: "Digite a nova senha",
@@ -65,6 +75,7 @@ class PasswordRedifinedPage extends StatelessWidget {
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                       TextFormField(
+                        controller: _verifyPasswordController,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           labelText: "Confirme a nova senha",
@@ -108,20 +119,7 @@ class PasswordRedifinedPage extends StatelessWidget {
                               textAlign: TextAlign.center,
                             ),
                             onPressed: () {
-                              Fluttertoast.showToast(
-                                  msg: "Sua senha foi redefinida!",
-                                  toastLength: Toast.LENGTH_LONG,
-                                  gravity: ToastGravity.CENTER,
-                                  timeInSecForIosWeb: 1,
-                                  backgroundColor: Colors.greenAccent,
-                                  textColor: Colors.black,
-                                  fontSize: 16.0);
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => LoginPage(),
-                                ),
-                              );
+                              _passwordRedefinedController.onClickChange(context, emailAddress, recoveryCode, _passwordController.text, _verifyPasswordController.text);
                             },
                           ),
                         ),

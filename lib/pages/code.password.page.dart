@@ -1,7 +1,15 @@
+import 'package:doglife/controllers/code.password.controller.dart';
 import 'package:doglife/pages/password.redifined.page.dart';
 import 'package:flutter/material.dart';
 
 class CodePasswordPage extends StatelessWidget {
+  final _codePasswordController = CodePasswordController();
+  final _recoveryCodeController = TextEditingController();
+  final String emailAddress; 
+
+  CodePasswordPage(this.emailAddress){
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +72,7 @@ class CodePasswordPage extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       TextFormField(
+                        controller: _recoveryCodeController,
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           labelText: "Insira o codigo",
@@ -107,12 +116,7 @@ class CodePasswordPage extends StatelessWidget {
                               textAlign: TextAlign.center,
                             ),
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => PasswordRedifinedPage(),
-                                ),
-                              );
+                              _codePasswordController.onClickVerify(context, emailAddress, _recoveryCodeController.text);
                             },
                           ),
                         ),

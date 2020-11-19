@@ -2,35 +2,22 @@ import 'dart:convert';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import '../pages/login.page.dart';
+import '../pages/code.password.page.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 
-class SignUpController {
-  void onClickSignUp(var context, String email, String password, String name,
-      String phone, String country, String state, String address) async {
+class ResetPasswordController {
+  void onClickReset(var context, String email) async {
     final response = await http.post(
-      'https://estimuloapi.herokuapp.com/estimulo/v1/auth/register',
+      'https://estimuloapi.herokuapp.com/estimulo/v1/password/reset-password?emailAddress=' + email,
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode(<String, String>{
-        'password': password,
-        'email': email,
-        'address': address,
-        'country': country,
-        'firstName': name,
-        'lastName': name,
-        'phoneNumber': phone,
-        'state': state
-      }),
+      }
     );
 
-    final bodyParsed = json.decode(response.body);
-
-    if (bodyParsed['response'] != null) {
+    if (response.statusCode == 200) {
       Fluttertoast.showToast(
-          msg: "Cadastro realizado com sucesso",
+          msg: "O código foi enviado para seu email.",
           toastLength: Toast.LENGTH_LONG,
           gravity: ToastGravity.TOP,
           timeInSecForIosWeb: 1,
@@ -41,13 +28,14 @@ class SignUpController {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => LoginPage(),
+          builder: (context) => CodePasswordPage(email),
         ),
       );
-    } else if (bodyParsed['errors'] != null) {
+    } else {
+      final bodyParsed = json.decode(response.body);
       print(bodyParsed['errors']);
       Fluttertoast.showToast(
-          msg: "Ocorreu um erro ao cadastrar o usuário",
+          msg: "Erro ao enviar o código.",
           toastLength: Toast.LENGTH_LONG,
           gravity: ToastGravity.TOP,
           timeInSecForIosWeb: 1,

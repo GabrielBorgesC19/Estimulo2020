@@ -1,9 +1,15 @@
+import 'package:doglife/controllers/login.controller.dart';
 import 'package:doglife/pages/reset-password.page.dart';
 import 'package:doglife/pages/home.page.dart';
 import 'package:doglife/pages/signup.page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+  final _loginController = new LoginController();
+
+  final _emailAddressController = new TextEditingController();
+  final _passwordController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +28,7 @@ class LoginPage extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
+              controller: _emailAddressController,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: "E-mail",
@@ -38,6 +45,7 @@ class LoginPage extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
+              controller: _passwordController,
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: InputDecoration(
@@ -107,12 +115,7 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomePage(),
-                      ),
-                    );
+                    _loginController.onClickLogin(context, _emailAddressController.text, _passwordController.text);
                   },
                 ),
               ),
