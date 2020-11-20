@@ -87,6 +87,7 @@ flutter:
     - assets/profile-picture.gif
     - assets/mentoriaazul.png
     - assets/capacitacaorosa.png
+    - assets/userregister.png
     
   fonts:
      - family: Raleway

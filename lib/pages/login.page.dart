@@ -115,7 +115,8 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                   onPressed: () {
-                    _loginController.onClickLogin(context, _emailAddressController.text, _passwordController.text);
+                    _loginController.onClickLogin(context,
+                        _emailAddressController.text, _passwordController.text);
                   },
                 ),
               ),

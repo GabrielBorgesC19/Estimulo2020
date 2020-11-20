@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
         title: Center(
           child: SizedBox(
             width: 100,
+            height: 70,
             child: Image.asset("assets/logo.png"),
           ),
         ),
@@ -27,9 +28,10 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Container(
-          alignment: Alignment(0.0, 1.15),
-          child: Column(children: [
-            SizedBox(height: (30)),
+        alignment: Alignment(0.0, 1.15),
+        child: Column(
+          children: [
+            SizedBox(height: (50)),
             CarouselSlider(
               options: CarouselOptions(
                 height: MediaQuery.of(context).size.width,
@@ -44,7 +46,8 @@ class HomePage extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.deepPurple,
                               fontSize: 25,
-                              fontStyle: FontStyle.italic,
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.bold,
                               fontFamily: "Raleway"),
                           textAlign: TextAlign.center),
                       width: MediaQuery.of(context).size.width,
@@ -67,7 +70,8 @@ class HomePage extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.deepPurple,
                               fontSize: 25,
-                              fontStyle: FontStyle.italic,
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.bold,
                               fontFamily: "Raleway"),
                           textAlign: TextAlign.center),
                       width: MediaQuery.of(context).size.width,
@@ -90,16 +94,18 @@ class HomePage extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.deepPurple,
                               fontSize: 25,
-                              fontStyle: FontStyle.italic,
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.bold,
                               fontFamily: "Raleway"),
                           textAlign: TextAlign.center),
                       width: MediaQuery.of(context).size.width,
                       margin: EdgeInsets.symmetric(horizontal: 5.0),
                       decoration: BoxDecoration(
                         image: new DecorationImage(
-                            image: AssetImage(
-                          "assets/mentoriaazul.png",
-                        )),
+                          image: AssetImage(
+                            "assets/mentoriaazul.png",
+                          ),
+                        ),
                         shape: BoxShape.circle,
                         color: Colors.deepPurple,
                       ),
@@ -107,8 +113,10 @@ class HomePage extends StatelessWidget {
                   },
                 ),
               ],
-            )
-          ])),
+            ),
+          ],
+        ),
+      ),
       drawer: Theme(
         data: Theme.of(context).copyWith(
           canvasColor: Colors
@@ -130,9 +138,14 @@ class HomePage extends StatelessWidget {
               ),
               ListTile(
                   leading: Icon(Icons.blur_on, color: Colors.white),
-                  title: Text("Trilhas", style: TextStyle(color: Colors.white)),
-                  subtitle: Text("Trilhas de aprendizado",
-                      style: TextStyle(color: Colors.white54)),
+                  title: Text(
+                    "Trilhas",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  subtitle: Text(
+                    "Trilhas de aprendizado",
+                    style: TextStyle(color: Colors.white54),
+                  ),
                   trailing: Icon(Icons.arrow_forward, color: Colors.white),
                   onTap: () {}),
               ListTile(
@@ -147,24 +160,33 @@ class HomePage extends StatelessWidget {
                   }),
               ListTile(
                   leading: Icon(Icons.forum, color: Colors.white),
-                  title: Text("Acompanhamento",
-                      style: TextStyle(color: Colors.white)),
-                  subtitle: Text("Reports, feedbacks...",
-                      style: TextStyle(color: Colors.white54)),
+                  title: Text(
+                    "Acompanhamento",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  subtitle: Text(
+                    "Reports, feedbacks...",
+                    style: TextStyle(color: Colors.white54),
+                  ),
                   trailing: Icon(Icons.arrow_forward, color: Colors.white),
                   onTap: () {
                     Navigator.pop(context);
                   }),
               ListTile(
-                  leading: Icon(Icons.attach_money, color: Colors.white),
-                  title: Text("Solicitar apoio financeiro",
-                      style: TextStyle(color: Colors.white)),
-                  subtitle: Text("Emprestimos",
-                      style: TextStyle(color: Colors.white54)),
-                  trailing: Icon(Icons.arrow_forward, color: Colors.white),
-                  onTap: () {
-                    Navigator.pop(context);
-                  }),
+                leading: Icon(Icons.attach_money, color: Colors.white),
+                title: Text(
+                  "Solicitar apoio financeiro",
+                  style: TextStyle(color: Colors.white),
+                ),
+                subtitle: Text(
+                  "Emprestimos",
+                  style: TextStyle(color: Colors.white54),
+                ),
+                trailing: Icon(Icons.arrow_forward, color: Colors.white),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
             ],
           ),
         ),

@@ -25,41 +25,25 @@ class SignupPage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             Container(
-              width: 100,
-              height: 100,
-              alignment: Alignment(0.0, 1.15),
-              decoration: new BoxDecoration(
-                image: new DecorationImage(
-                  image: AssetImage("assets/profile-picture.png"),
-                  fit: BoxFit.fitHeight,
-                ),
-              ),
-              child: Container(
-                height: 18,
-                width: 18,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    stops: [0.3, 1.0],
-                    colors: [
-                      Color(0xFFF525aaff),
-                      Color(0XFFF92B7F),
-                    ],
-                  ),
-                  border: Border.all(
-                    width: 4.0,
-                    color: const Color(0xFFF525aaff),
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(56),
+                width: 600,
+                height: 350,
+                alignment: Alignment(0.0, 1.15),
+                decoration: new BoxDecoration(
+                  image: new DecorationImage(
+                    image: AssetImage("assets/userregister.png"),
                   ),
                 ),
-              ),
-            ),
+                child: Container(
+                    child: Text("Cadastro",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontStyle: FontStyle.normal,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Raleway",
+                            decoration: TextDecoration.underline)))),
             SizedBox(
-              height: 10,
+              height: 40,
             ),
             TextFormField(
               // autofocus: true,
@@ -97,23 +81,6 @@ class SignupPage extends StatelessWidget {
                 fontSize: 20,
                 color: Colors.white,
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextFormField(
-              // autofocus: true,
-              controller: _countryController,
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(
-                labelText: "País*",
-                labelStyle: TextStyle(
-                  color: Colors.white60,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
-                ),
-              ),
-              style: TextStyle(fontSize: 20, color: Colors.white),
             ),
             SizedBox(
               height: 10,
@@ -194,7 +161,7 @@ class SignupPage extends StatelessWidget {
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
             SizedBox(
-              height: 15,
+              height: 30,
             ),
             Container(
               height: 60,
@@ -224,19 +191,19 @@ class SignupPage extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  onPressed: () => _signUpController.onClickSignUp(context,
+                  onPressed: () => _signUpController.onClickSignUp(
+                      context,
                       _emailController.text,
                       _passwordController.text,
                       _nameController.text,
                       _phoneController.text,
-                      _countryController.text,
                       _stateController.text,
                       _addressController.text),
                 ),
               ),
             ),
             SizedBox(
-              height: 5,
+              height: 15,
             ),
             Container(
                 height: 30,

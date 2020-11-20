@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 
 class SignUpController {
   void onClickSignUp(var context, String email, String password, String name,
-      String phone, String country, String state, String address) async {
+      String phone, String state, String address) async {
     final response = await http.post(
       'https://estimuloapi.herokuapp.com/estimulo/v1/auth/register',
       headers: <String, String>{
@@ -18,7 +18,7 @@ class SignUpController {
         'password': password,
         'email': email,
         'address': address,
-        'country': country,
+        'country': "country",
         'firstName': name,
         'lastName': name,
         'phoneNumber': phone,
@@ -37,7 +37,7 @@ class SignUpController {
           backgroundColor: Colors.green[200],
           textColor: Colors.black,
           fontSize: 16.0);
-          
+
       Navigator.push(
         context,
         MaterialPageRoute(
