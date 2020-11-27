@@ -1,3 +1,4 @@
+import 'package:doglife/pages/capacitacao.page.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -17,17 +18,11 @@ class HomePage extends StatelessWidget {
         actions: <Widget>[
           Container(
             width: 60,
-            child: FlatButton(
-              child: Icon(
-                Icons.search,
-                color: Color(0xFFBABABA),
-              ),
-              onPressed: () => {},
-            ),
           ),
         ],
       ),
       body: Container(
+        color: Colors.white,
         alignment: Alignment(0.0, 1.15),
         child: Column(
           children: [
@@ -41,48 +36,68 @@ class HomePage extends StatelessWidget {
               items: [
                 Builder(
                   builder: (BuildContext context) {
-                    return Container(
-                      child: Text("Capacitação Geral",
-                          style: TextStyle(
-                              color: Colors.deepPurple,
-                              fontSize: 25,
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: "Raleway"),
-                          textAlign: TextAlign.center),
-                      width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 5.0),
-                      decoration: BoxDecoration(
-                        image: new DecorationImage(
-                            image: AssetImage(
-                          "assets/capacitacaorosa.png",
-                        )),
-                        shape: BoxShape.circle,
-                        color: Colors.deepPurple,
-                      ),
-                    );
+                    return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            //
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CapacitacaoGeral(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          child: Text("Capacitação Geral",
+                              style: TextStyle(
+                                  color: Colors.purple[900],
+                                  fontSize: 25,
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "Raleway"),
+                              textAlign: TextAlign.center),
+                          width: MediaQuery.of(context).size.width,
+                          margin: EdgeInsets.symmetric(horizontal: 5.0),
+                          decoration: BoxDecoration(
+                            image: new DecorationImage(
+                                image: AssetImage(
+                              "assets/capacitacaorosa.png",
+                            )),
+                            shape: BoxShape.circle,
+                            color: Colors.purple[900],
+                          ),
+                        ));
                   },
                 ),
                 Builder(
                   builder: (BuildContext context) {
-                    return Container(
-                      child: Text("Acompanhamento",
-                          style: TextStyle(
-                              color: Colors.deepPurple,
-                              fontSize: 25,
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: "Raleway"),
-                          textAlign: TextAlign.center),
-                      width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 5.0),
-                      decoration: BoxDecoration(
-                        image: new DecorationImage(
-                            image: AssetImage(
-                          "assets/acompanhamentoverde.png",
-                        )),
-                        shape: BoxShape.circle,
-                        color: Colors.deepPurple,
+                    return GestureDetector(
+                      onTap: () {
+                        //Navigator.push(
+                        // context,
+                        //  MaterialPageRoute(
+                        //   builder: (context) => CapacitacaoGeral(),
+                        //  ),
+                        //   );
+                      },
+                      child: new Container(
+                        child: Text("Acompanhamento",
+                            style: TextStyle(
+                                color: Colors.purple[900],
+                                fontSize: 25,
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Raleway"),
+                            textAlign: TextAlign.center),
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: BoxDecoration(
+                          image: new DecorationImage(
+                              image: AssetImage(
+                            "assets/acompanhamentoverde.png",
+                          )),
+                          shape: BoxShape.circle,
+                          color: Colors.purple[900],
+                        ),
                       ),
                     );
                   },
@@ -92,7 +107,7 @@ class HomePage extends StatelessWidget {
                     return Container(
                       child: Text("Mentoria Especifica",
                           style: TextStyle(
-                              color: Colors.deepPurple,
+                              color: Colors.purple[900],
                               fontSize: 25,
                               fontStyle: FontStyle.normal,
                               fontWeight: FontWeight.bold,
@@ -107,7 +122,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         shape: BoxShape.circle,
-                        color: Colors.deepPurple,
+                        color: Colors.purple[900],
                       ),
                     );
                   },
