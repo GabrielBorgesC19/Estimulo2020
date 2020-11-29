@@ -14,8 +14,18 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            stops: [0.3, 1],
+            colors: [
+              Color(0xFFF525aaff),
+              Color(0XFFF92B7F),
+            ],
+          ),
+        ),
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
-        color: Colors.deepPurple,
         child: ListView(
           children: <Widget>[
             SizedBox(
@@ -24,16 +34,24 @@ class LoginPage extends StatelessWidget {
               child: Image.asset("assets/logo.png"),
             ),
             SizedBox(
-              height: 20,
+              height: 60,
             ),
             TextFormField(
               // autofocus: true,
               controller: _emailAddressController,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
+                enabledBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
+                focusedBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
                 labelText: "E-mail",
                 labelStyle: TextStyle(
-                  color: Colors.white60,
+                  color: Colors.white70,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -41,7 +59,7 @@ class LoginPage extends StatelessWidget {
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             TextFormField(
               // autofocus: true,
@@ -49,9 +67,17 @@ class LoginPage extends StatelessWidget {
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: InputDecoration(
+                enabledBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
+                focusedBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
                 labelText: "Senha",
                 labelStyle: TextStyle(
-                  color: Colors.white60,
+                  color: Colors.white70,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -80,21 +106,13 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 75,
             ),
             Container(
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3, 1],
-                  colors: [
-                    Color(0xFFF525aaff),
-                    Color(0XFFF92B7F),
-                  ],
-                ),
+                color: Colors.blue[600],
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),
@@ -118,11 +136,11 @@ class LoginPage extends StatelessWidget {
                     _loginController.onClickLogin(context,
                         _emailAddressController.text, _passwordController.text);
                   },
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 10,
             ),
             SizedBox(
               height: 30,

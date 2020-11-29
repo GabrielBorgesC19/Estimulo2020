@@ -19,14 +19,35 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(30.0),
+          child: AppBar(
+            backgroundColor: Color(0xFFF525aaff),
+            shadowColor: Colors.transparent,
+            automaticallyImplyLeading: true,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              color: Colors.white,
+              onPressed: () => Navigator.pop(context, false),
+            ),
+          )),
       body: Container(
         padding: EdgeInsets.only(top: 10, left: 40, right: 40),
-        color: Colors.deepPurple,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          stops: [0.3, 1],
+          colors: [
+            Color(0xFFF525aaff),
+            Color(0XFFF92B7F),
+          ],
+        )),
         child: ListView(
           children: <Widget>[
             Container(
-                width: 600,
-                height: 350,
+                width: 350,
+                height: 250,
                 alignment: Alignment(0.0, 1.15),
                 decoration: new BoxDecoration(
                   image: new DecorationImage(
@@ -36,23 +57,31 @@ class SignupPage extends StatelessWidget {
                 child: Container(
                     child: Text("Cadastro",
                         style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.white,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Raleway",
-                            decoration: TextDecoration.underline)))),
+                          fontSize: 30,
+                          color: Colors.white,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Raleway",
+                        )))),
             SizedBox(
-              height: 40,
+              height: 45,
             ),
             TextFormField(
               // autofocus: true,
               controller: _nameController,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
+                enabledBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
+                focusedBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
                 labelText: "Nome Completo*",
                 labelStyle: TextStyle(
-                  color: Colors.white60,
+                  color: Colors.white70,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -63,16 +92,24 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             TextFormField(
               // autofocus: true,
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
+                enabledBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
+                focusedBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
                 labelText: "Email*",
                 labelStyle: TextStyle(
-                  color: Colors.white60,
+                  color: Colors.white70,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -83,16 +120,24 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             TextFormField(
               // autofocus: true,
               controller: _stateController,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
+                enabledBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
+                focusedBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
                 labelText: "Estado*",
                 labelStyle: TextStyle(
-                  color: Colors.white60,
+                  color: Colors.white70,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -103,16 +148,24 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             TextFormField(
               // autofocus: true,
               controller: _addressController,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
+                enabledBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
+                focusedBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
                 labelText: "Endereco*",
                 labelStyle: TextStyle(
-                  color: Colors.white60,
+                  color: Colors.white70,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -123,16 +176,24 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             TextFormField(
               // autofocus: true,
               keyboardType: TextInputType.number,
               controller: _phoneController,
               decoration: InputDecoration(
+                enabledBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
+                focusedBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
                 labelText: "Numero de telefone*",
                 labelStyle: TextStyle(
-                  color: Colors.white60,
+                  color: Colors.white70,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -143,7 +204,7 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             TextFormField(
               // autofocus: true,
@@ -151,9 +212,17 @@ class SignupPage extends StatelessWidget {
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: InputDecoration(
+                enabledBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
+                focusedBorder: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(color: Colors.white30, width: 2.0),
+                ),
                 labelText: "Senha*",
                 labelStyle: TextStyle(
-                  color: Colors.white60,
+                  color: Colors.white70,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -167,15 +236,7 @@ class SignupPage extends StatelessWidget {
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3, 1],
-                  colors: [
-                    Color(0xFFF525aaff),
-                    Color(0XFFF92B7F),
-                  ],
-                ),
+                color: Colors.blue[600],
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),
@@ -203,7 +264,7 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 15,
+              height: 25,
             ),
             Container(
                 height: 30,

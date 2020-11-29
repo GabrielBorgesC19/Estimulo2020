@@ -1,3 +1,4 @@
+import 'package:doglife/pages/acompanhamento.page.dart';
 import 'package:doglife/pages/capacitacao.page.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -7,7 +8,23 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.blue[100],
+        shadowColor: Colors.transparent,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              border: new Border.all(color: Colors.transparent, width: 2.0),
+              borderRadius: new BorderRadius.only(
+                  bottomLeft: Radius.circular(25.0),
+                  bottomRight: Radius.circular(25.0)),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xFFF525aaff),
+                  Color(0XFFF92B7F),
+                ],
+              )),
+        ),
         title: Center(
           child: SizedBox(
             width: 100,
@@ -22,7 +39,15 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Container(
-        color: Colors.white,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Colors.blue[100],
+            Colors.white,
+          ],
+        )),
         alignment: Alignment(0.0, 1.15),
         child: Column(
           children: [
@@ -49,10 +74,10 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           child: Text("Capacitação Geral",
                               style: TextStyle(
-                                  color: Colors.purple[900],
+                                  color: Colors.black,
                                   fontSize: 25,
                                   fontStyle: FontStyle.normal,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.normal,
                                   fontFamily: "Raleway"),
                               textAlign: TextAlign.center),
                           width: MediaQuery.of(context).size.width,
@@ -60,10 +85,10 @@ class HomePage extends StatelessWidget {
                           decoration: BoxDecoration(
                             image: new DecorationImage(
                                 image: AssetImage(
-                              "assets/capacitacaorosa.png",
+                              "assets/capacitacao.png",
                             )),
                             shape: BoxShape.circle,
-                            color: Colors.purple[900],
+                            color: Colors.transparent,
                           ),
                         ));
                   },
@@ -72,20 +97,21 @@ class HomePage extends StatelessWidget {
                   builder: (BuildContext context) {
                     return GestureDetector(
                       onTap: () {
-                        //Navigator.push(
-                        // context,
-                        //  MaterialPageRoute(
-                        //   builder: (context) => CapacitacaoGeral(),
-                        //  ),
-                        //   );
+                        Navigator.push(
+                          //
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Acompanhamento(),
+                          ),
+                        );
                       },
                       child: new Container(
                         child: Text("Acompanhamento",
                             style: TextStyle(
-                                color: Colors.purple[900],
+                                color: Colors.black,
                                 fontSize: 25,
                                 fontStyle: FontStyle.normal,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.normal,
                                 fontFamily: "Raleway"),
                             textAlign: TextAlign.center),
                         width: MediaQuery.of(context).size.width,
@@ -93,10 +119,10 @@ class HomePage extends StatelessWidget {
                         decoration: BoxDecoration(
                           image: new DecorationImage(
                               image: AssetImage(
-                            "assets/acompanhamentoverde.png",
+                            "assets/acompanhamento.png",
                           )),
                           shape: BoxShape.circle,
-                          color: Colors.purple[900],
+                          color: Colors.transparent,
                         ),
                       ),
                     );
@@ -107,10 +133,10 @@ class HomePage extends StatelessWidget {
                     return Container(
                       child: Text("Mentoria Especifica",
                           style: TextStyle(
-                              color: Colors.purple[900],
+                              color: Colors.black,
                               fontSize: 25,
                               fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.normal,
                               fontFamily: "Raleway"),
                           textAlign: TextAlign.center),
                       width: MediaQuery.of(context).size.width,
@@ -118,16 +144,20 @@ class HomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         image: new DecorationImage(
                           image: AssetImage(
-                            "assets/mentoriaazul.png",
+                            "assets/mentoria.png",
                           ),
                         ),
                         shape: BoxShape.circle,
-                        color: Colors.purple[900],
+                        color: Colors.transparent,
                       ),
                     );
                   },
                 ),
               ],
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 60, left: 40, right: 40),
+              child: FlatButton(),
             ),
           ],
         ),
@@ -135,7 +165,7 @@ class HomePage extends StatelessWidget {
       drawer: Theme(
         data: Theme.of(context).copyWith(
           canvasColor: Colors
-              .deepPurple, //This will change the drawer background to blue.
+              .blue[300], //This will change the drawer background to blue.
           //other styles
         ),
         child: Drawer(
@@ -143,7 +173,15 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.deepPurple,
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    stops: [0.3, 1],
+                    colors: [
+                      Color(0xFFF525aaff),
+                      Color(0XFFF92B7F),
+                    ],
+                  ),
                 ),
                 child: SizedBox(
                   width: 80,

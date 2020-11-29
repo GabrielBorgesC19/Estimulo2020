@@ -3,23 +3,36 @@ import 'package:flutter/material.dart';
 import 'package:doglife/pages/code.password.page.dart';
 
 class ResetPasswordPage extends StatelessWidget {
-  final _resetPasswordController = new ResetPasswordController(); 
+  final _resetPasswordController = new ResetPasswordController();
   final _emailController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        automaticallyImplyLeading: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          color: Colors.white,
-          onPressed: () => Navigator.pop(context, false),
-        ),
-      ),
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(40.0),
+          child: AppBar(
+            backgroundColor: Color(0xFFF525aaff),
+            shadowColor: Colors.transparent,
+            automaticallyImplyLeading: true,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              color: Colors.white,
+              onPressed: () => Navigator.pop(context, false),
+            ),
+          )),
       body: Container(
-        padding: EdgeInsets.only(top: 60, left: 40, right: 40),
-        color: Colors.deepPurple,
+        padding: EdgeInsets.only(top: 5, left: 40, right: 40),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            stops: [0.3, 1],
+            colors: [
+              Color(0xFFF525aaff),
+              Color(0XFFF92B7F),
+            ],
+          ),
+        ),
         child: ListView(
           children: <Widget>[
             Column(
@@ -29,12 +42,12 @@ class ResetPasswordPage extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        width: 100,
-                        height: 100,
-                        child: Image.asset("assets/reset-password-icon.png"),
+                        width: 150,
+                        height: 150,
+                        child: Image.asset("assets/senha.png"),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 30,
                       ),
                       Text(
                         "Esqueceu sua senha?",
@@ -59,6 +72,9 @@ class ResetPasswordPage extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(
+                  height: 30,
+                ),
                 Container(
                   width: double.infinity,
                   child: Column(
@@ -67,9 +83,19 @@ class ResetPasswordPage extends StatelessWidget {
                         controller: _emailController,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
+                          enabledBorder: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(25.0),
+                            borderSide: new BorderSide(
+                                color: Colors.white30, width: 2.0),
+                          ),
+                          focusedBorder: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(25.0),
+                            borderSide: new BorderSide(
+                                color: Colors.white30, width: 2.0),
+                          ),
                           labelText: "E-mail",
                           labelStyle: TextStyle(
-                            color: Colors.white60,
+                            color: Colors.white70,
                             fontWeight: FontWeight.w400,
                             fontSize: 20,
                           ),
@@ -77,21 +103,13 @@ class ResetPasswordPage extends StatelessWidget {
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                       SizedBox(
-                        height: 30,
+                        height: 40,
                       ),
                       Container(
                         height: 60,
                         alignment: Alignment.centerLeft,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            stops: [0.3, 1],
-                            colors: [
-                              Color(0xFFF525aaff),
-                              Color(0XFFF92B7F),
-                            ],
-                          ),
+                          color: Colors.blue[600],
                           borderRadius: BorderRadius.all(
                             Radius.circular(5),
                           ),
@@ -108,7 +126,8 @@ class ResetPasswordPage extends StatelessWidget {
                               textAlign: TextAlign.center,
                             ),
                             onPressed: () {
-                              _resetPasswordController.onClickReset(context, _emailController.text);
+                              _resetPasswordController.onClickReset(
+                                  context, _emailController.text);
                             },
                           ),
                         ),

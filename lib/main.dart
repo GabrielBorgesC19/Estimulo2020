@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Dog Life',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primaryColor: Colors.white,
       ),
       home: LoginPage(),
     );

@@ -7,7 +7,23 @@ class CapacitacaoGeral extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.blue[100],
+        shadowColor: Colors.transparent,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              border: new Border.all(color: Colors.transparent, width: 2.0),
+              borderRadius: new BorderRadius.only(
+                  bottomLeft: Radius.circular(25.0),
+                  bottomRight: Radius.circular(25.0)),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xFFF525aaff),
+                  Color(0XFFF92B7F),
+                ],
+              )),
+        ),
         title: Center(
           child: SizedBox(
             width: 100,
@@ -22,10 +38,14 @@ class CapacitacaoGeral extends StatelessWidget {
         ],
       ),
       body: Container(
+          decoration: BoxDecoration(color: Colors.grey[300]),
           alignment: Alignment(0.0, 1.15),
           child: ListView(
             children: <Widget>[
               cardItem('Z9UjO5Ng63M'),
+              SizedBox(
+                height: 25,
+              ),
               cardItem('A0J5LpjuQA0'),
             ],
           )),
@@ -34,9 +54,12 @@ class CapacitacaoGeral extends StatelessWidget {
 }
 
 Widget cardItem(String videoCode) {
-  return Card(
+  return Container(
+    decoration: BoxDecoration(
+      color: Colors.blue[100],
+    ),
     child: Column(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         const ListTile(
           title: Text("Video teste",
@@ -47,9 +70,11 @@ Widget cardItem(String videoCode) {
               textAlign: TextAlign.center),
           trailing: Icon(Icons.more_vert),
         ),
-        Container(child: VideoPlayer(videoCode)),
         Container(
-          padding: EdgeInsets.all(10),
+          child: VideoPlayer(videoCode),
+        ),
+        Container(
+          padding: EdgeInsets.only(top: 40, left: 30, right: 30, bottom: 20),
           child: Text(
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ex sem. Praesent elit dui, iaculis at interdum eu, rutrum et mi. "),
         ),
