@@ -1,111 +1,198 @@
+import 'package:doglife/pages/reports.page.dart';
 import 'package:flutter/material.dart';
 
 class Acompanhamento extends StatelessWidget {
+  String reportCard;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue[100],
-        shadowColor: Colors.transparent,
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-              border: new Border.all(color: Colors.transparent, width: 2.0),
-              borderRadius: new BorderRadius.only(
-                  bottomLeft: Radius.circular(25.0),
-                  bottomRight: Radius.circular(25.0)),
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Color(0xFFF525aaff),
-                  Color(0XFFF92B7F),
-                ],
-              )),
-        ),
-        title: Center(
-          child: Container(
-            padding: EdgeInsets.only(top: 0, left: 0, right: 37),
-            child: Text(
-              "Acompanhamento do negócio",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.normal,
-                  fontFamily: "Raleway"),
-            ),
-          ),
-        ),
-      ),
-      body: Container(
-        padding: EdgeInsets.only(top: 20, left: 40, right: 40),
-        decoration: BoxDecoration(color: Colors.blue[100]),
-        alignment: Alignment(0.0, -1),
-        child: Column(
-          children: <Widget>[
-            Container(
-              width: 300,
-              height: 200,
-              decoration: new BoxDecoration(
-                image: new DecorationImage(
-                  image: AssetImage("assets/avatar.png"),
+      backgroundColor: Color(0XFFFAFBFC),
+      body: SafeArea(
+        child: Stack(children: [
+          Container(
+            height: 200,
+            padding: EdgeInsets.only(top: 25),
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(0xFFF525aaff),
+                    Color(0XFFFF66FF),
+                  ],
                 ),
-              ),
-            ),
-            SizedBox(height: 30),
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(25),
+                    bottomLeft: Radius.circular(25))),
+            alignment: Alignment(0.0, -1),
+          ),
+          Column(children: [
             Container(
-              alignment: Alignment(0.0, -1),
-              width: 100,
-              height: 50,
-              decoration: BoxDecoration(
-                border: new Border.all(color: Colors.transparent, width: 2.0),
-                borderRadius: new BorderRadius.circular(15),
-                color: Colors.blue[600],
-              ),
-              child: FlatButton(
-                padding: EdgeInsets.only(left: 0.0),
-                child: Text('Reports', style: TextStyle(color: Colors.white)),
-                onPressed: () => Navigator.pop(context, false),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
+                padding: EdgeInsets.only(top: 20),
+                child: Center(
+                    child: Text("DASHBOARD",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontStyle: FontStyle.normal,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Raleway"),
+                        textAlign: TextAlign.center))),
             Container(
-              alignment: Alignment(0.0, -1),
-              width: 100,
-              height: 50,
+              margin: EdgeInsets.only(top: 20, left: 40, right: 40),
               decoration: BoxDecoration(
-                border: new Border.all(color: Colors.transparent, width: 2.0),
-                borderRadius: new BorderRadius.circular(15),
-                color: Colors.blue[600],
-              ),
-              child: FlatButton(
-                padding: EdgeInsets.only(left: 0.0),
-                child: Text('Duvidas', style: TextStyle(color: Colors.white)),
-                onPressed: () => Navigator.pop(context, false),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 3,
+                      blurRadius: 5,
+                      offset: Offset(0, 1), // changes position of shadow
+                    ),
+                  ],
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(25))),
+              height: 200,
+              child: Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: 5,
+                      left: 45,
+                      right: 45,
+                      bottom: 140,
+                    ),
+                    child: Text('Concluidos'),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: 5,
+                      left: 55,
+                      right: 45,
+                      bottom: 140,
+                    ),
+                    child: Text('Pendentes'),
+                  ),
+                ],
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              alignment: Alignment(0.0, -1),
-              width: 100,
-              height: 50,
-              decoration: BoxDecoration(
-                border: new Border.all(color: Colors.transparent, width: 2.0),
-                borderRadius: new BorderRadius.circular(15),
-                color: Colors.blue[600],
-              ),
-              child: FlatButton(
-                padding: EdgeInsets.only(left: 0.0),
-                child: Text('FAQ', style: TextStyle(color: Colors.white)),
-                onPressed: () => Navigator.pop(context, false),
-              ),
-            ),
-          ],
-        ),
+            SizedBox(height: 20),
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Container(
+                  margin: EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 5,
+                        offset: Offset(0, 1), // changes position of shadow
+                      ),
+                    ],
+                    borderRadius: BorderRadius.all(Radius.circular(7)),
+                    color: Colors.white,
+                  ),
+                  child: Row(children: [
+                    Container(
+                        height: 90, child: Image.asset('assets/relatorio.png')),
+                    Container(
+                        child: Text('Reports sobre o cu do arthur',
+                            style: TextStyle(color: Colors.black))),
+                    Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color(0xFFF525aaff),
+                            Color(0XFFFF66FF),
+                          ],
+                        ),
+                      ),
+                      child: FlatButton(
+                        child: Icon(Icons.add, color: Colors.white),
+                      ),
+                    ),
+                  ])),
+              SizedBox(height: 10),
+              Container(
+                  margin: EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 5,
+                        offset: Offset(0, 1), // changes position of shadow
+                      ),
+                    ],
+                    borderRadius: BorderRadius.all(Radius.circular(7)),
+                    color: Colors.white,
+                  ),
+                  child: Row(children: [
+                    Container(
+                        height: 90, child: Image.asset('assets/relatorio.png')),
+                    Container(
+                        child: Text('Reports sobre o cu do arthur',
+                            style: TextStyle(color: Colors.black))),
+                    Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color(0xFFF525aaff),
+                            Color(0XFFFF66FF),
+                          ],
+                        ),
+                      ),
+                      child: FlatButton(
+                        child: Icon(Icons.add, color: Colors.white),
+                      ),
+                    ),
+                  ])),
+              SizedBox(height: 10),
+              Container(
+                  margin: EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 5,
+                        offset: Offset(0, 1), // changes position of shadow
+                      ),
+                    ],
+                    borderRadius: BorderRadius.all(Radius.circular(7)),
+                    color: Colors.white,
+                  ),
+                  child: Row(children: [
+                    Container(
+                        height: 90, child: Image.asset('assets/relatorio.png')),
+                    Container(
+                        child: Text('Reports sobre o cu do arthur',
+                            style: TextStyle(color: Colors.black))),
+                    Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color(0xFFF525aaff),
+                            Color(0XFFFF66FF),
+                          ],
+                        ),
+                      ),
+                      child: FlatButton(
+                        child: Icon(Icons.add, color: Colors.white),
+                      ),
+                    ),
+                  ])),
+            ])
+          ]),
+        ]),
       ),
     );
   }

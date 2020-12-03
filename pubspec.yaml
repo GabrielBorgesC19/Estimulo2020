@@ -90,6 +90,7 @@ flutter:
     - assets/capacitacao.png
     - assets/acompanhamento.png
     - assets/avatar.png
+    - assets/relatorio.png
     
   fonts:
      - family: Raleway
