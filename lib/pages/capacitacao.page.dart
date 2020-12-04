@@ -6,8 +6,10 @@ class CapacitacaoGeral extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.blue[100],
+        elevation: 1,
+        backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -20,15 +22,15 @@ class CapacitacaoGeral extends StatelessWidget {
                 end: Alignment.bottomRight,
                 colors: [
                   Color(0xFFF525aaff),
-                  Color(0XFFF92B7F),
+                  Color(0XFFFF66FF),
                 ],
               )),
         ),
         title: Center(
           child: SizedBox(
             width: 100,
-            height: 70,
-            child: Image.asset("assets/logo.png"),
+            height: 60,
+            child: Image.asset("assets/estimulo_logo.png"),
           ),
         ),
         actions: <Widget>[
@@ -42,9 +44,12 @@ class CapacitacaoGeral extends StatelessWidget {
           alignment: Alignment(0.0, 1.15),
           child: ListView(
             children: <Widget>[
-              cardItem('Z9UjO5Ng63M'),
               SizedBox(
                 height: 25,
+              ),
+              cardItem('Z9UjO5Ng63M'),
+              SizedBox(
+                height: 5,
               ),
               cardItem('A0J5LpjuQA0'),
             ],
@@ -55,21 +60,14 @@ class CapacitacaoGeral extends StatelessWidget {
 
 Widget cardItem(String videoCode) {
   return Container(
+    padding: EdgeInsets.all(15),
+    margin: EdgeInsets.all(10),
     decoration: BoxDecoration(
-      color: Colors.blue[100],
-    ),
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(10))),
     child: Column(
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
-        const ListTile(
-          title: Text("Video teste",
-              style: TextStyle(
-                  color: Colors.deepPurple,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20),
-              textAlign: TextAlign.center),
-          trailing: Icon(Icons.more_vert),
-        ),
         Container(
           child: VideoPlayer(videoCode),
         ),
@@ -114,10 +112,11 @@ class VideoPlayer extends StatelessWidget {
           controller: _controller,
         ),
         builder: (context, player) {
-          return Column(
+          return Stack(
+            key: GlobalKey<FormState>(debugLabel: '_videoCode_' + videoCode),
             children: [
-              // some widgets
               player,
+              ClipRRect(borderRadius: BorderRadius.circular(10), child: player)
               //some other widgets
             ],
           );
