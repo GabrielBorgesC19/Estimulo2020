@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
                 end: Alignment.bottomRight,
                 colors: [
                   Color(0xFFF525aaff),
-                  Color(0XFFF92B7F),
+                  Color(0XFFFF66FF),
                 ],
               )),
         ),
@@ -179,7 +179,7 @@ class HomePage extends StatelessWidget {
                     stops: [0.3, 1],
                     colors: [
                       Color(0xFFF525aaff),
-                      Color(0XFFF92B7F),
+                      Color(0XFFFF66FF),
                     ],
                   ),
                 ),
@@ -192,11 +192,11 @@ class HomePage extends StatelessWidget {
               ListTile(
                   leading: Icon(Icons.blur_on, color: Colors.white),
                   title: Text(
-                    "Trilhas",
+                    "Capacitação Geral",
                     style: TextStyle(color: Colors.white),
                   ),
                   subtitle: Text(
-                    "Trilhas de aprendizado",
+                    "Playlist de vídeos",
                     style: TextStyle(color: Colors.white54),
                   ),
                   trailing: Icon(Icons.arrow_forward, color: Colors.white),
