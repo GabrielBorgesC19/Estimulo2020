@@ -37,10 +37,10 @@ class SignupPage extends StatelessWidget {
             gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          stops: [0.3, 1],
+          stops: [0.2, 1],
           colors: [
             Color(0xFFF525aaff),
-            Color(0XFFF92B7F),
+            Color(0XFFFF66FF),
           ],
         )),
         child: ListView(

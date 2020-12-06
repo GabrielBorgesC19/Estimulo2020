@@ -1,5 +1,6 @@
 import 'package:doglife/pages/acompanhamento.page.dart';
 import 'package:doglife/pages/capacitacao.page.dart';
+import 'package:doglife/pages/mentoria.page.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -7,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[100],
       appBar: AppBar(
         backgroundColor: Colors.blue[100],
         shadowColor: Colors.transparent,
@@ -28,8 +30,8 @@ class HomePage extends StatelessWidget {
         title: Center(
           child: SizedBox(
             width: 100,
-            height: 70,
-            child: Image.asset("assets/logo.png"),
+            height: 45,
+            child: Image.asset("assets/estimulo_logo.png"),
           ),
         ),
         actions: <Widget>[
@@ -39,6 +41,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Container(
+        margin: EdgeInsets.only(top: 60),
         decoration: BoxDecoration(
             gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -130,25 +133,36 @@ class HomePage extends StatelessWidget {
                 ),
                 Builder(
                   builder: (BuildContext context) {
-                    return Container(
-                      child: Text("Mentoria Especifica",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 25,
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.normal,
-                              fontFamily: "Raleway"),
-                          textAlign: TextAlign.center),
-                      width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 5.0),
-                      decoration: BoxDecoration(
-                        image: new DecorationImage(
-                          image: AssetImage(
-                            "assets/mentoria.png",
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          //
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Mentoria(),
                           ),
+                        );
+                      },
+                      child: new Container(
+                        child: Text("Mentoria Especifica",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 25,
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.normal,
+                                fontFamily: "Raleway"),
+                            textAlign: TextAlign.center),
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: BoxDecoration(
+                          image: new DecorationImage(
+                            image: AssetImage(
+                              "assets/mentoria.png",
+                            ),
+                          ),
+                          shape: BoxShape.circle,
+                          color: Colors.transparent,
                         ),
-                        shape: BoxShape.circle,
-                        color: Colors.transparent,
                       ),
                     );
                   },

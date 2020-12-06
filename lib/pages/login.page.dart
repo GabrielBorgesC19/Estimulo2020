@@ -18,10 +18,10 @@ class LoginPage extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            stops: [0.3, 1],
+            stops: [0.2, 1],
             colors: [
               Color(0xFFF525aaff),
-              Color(0XFFF92B7F),
+              Color(0XFFFF66FF),
             ],
           ),
         ),
@@ -112,7 +112,7 @@ class LoginPage extends StatelessWidget {
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                color: Colors.blue[600],
+                color: Color(0XFF5BC8F5),
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),
@@ -143,7 +143,7 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 50,
             ),
             Container(
               height: 40,
