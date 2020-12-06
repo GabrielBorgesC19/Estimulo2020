@@ -108,7 +108,7 @@ class _CapacitacaoGeralState extends State<CapacitacaoGeral> {
         title: Center(
           child: SizedBox(
             width: 100,
-            height: 60,
+            height: 45,
             child: Image.asset("assets/estimulo_logo.png"),
           ),
         ),

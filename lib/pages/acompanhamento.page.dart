@@ -78,7 +78,53 @@ class Acompanhamento extends StatelessWidget {
             SizedBox(height: 20),
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Container(
-                  margin: EdgeInsets.all(7),
+                  margin: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 5,
+                        offset: Offset(0, 1), // changes position of shadow
+                      ),
+                    ],
+                    borderRadius: BorderRadius.all(Radius.circular(7)),
+                    color: Colors.white,
+                  ),
+                  child: Row(children: [
+                    Container(
+                        height: 90, child: Image.asset('assets/relatorio.png')),
+                    Container(
+                        child: Text('Reports sobre o cu do arthur',
+                            style: TextStyle(color: Colors.black))),
+                    Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color(0xFFF525aaff),
+                            Color(0XFFFF66FF),
+                          ],
+                        ),
+                      ),
+                      child: FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Reports(),
+                            ),
+                          );
+                        },
+                        child: Icon(Icons.add, color: Colors.white),
+                      ),
+                    ),
+                  ])),
+              SizedBox(height: 10),
+              Container(
+                  margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
@@ -116,45 +162,7 @@ class Acompanhamento extends StatelessWidget {
                   ])),
               SizedBox(height: 10),
               Container(
-                  margin: EdgeInsets.all(7),
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 3,
-                        blurRadius: 5,
-                        offset: Offset(0, 1), // changes position of shadow
-                      ),
-                    ],
-                    borderRadius: BorderRadius.all(Radius.circular(7)),
-                    color: Colors.white,
-                  ),
-                  child: Row(children: [
-                    Container(
-                        height: 90, child: Image.asset('assets/relatorio.png')),
-                    Container(
-                        child: Text('Reports sobre o cu do arthur',
-                            style: TextStyle(color: Colors.black))),
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color(0xFFF525aaff),
-                            Color(0XFFFF66FF),
-                          ],
-                        ),
-                      ),
-                      child: FlatButton(
-                        child: Icon(Icons.add, color: Colors.white),
-                      ),
-                    ),
-                  ])),
-              SizedBox(height: 10),
-              Container(
-                  margin: EdgeInsets.all(7),
+                  margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
