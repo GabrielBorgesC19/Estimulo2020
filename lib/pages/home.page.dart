@@ -1,5 +1,6 @@
 import 'package:doglife/pages/acompanhamento.page.dart';
 import 'package:doglife/pages/capacitacao.page.dart';
+import 'package:doglife/pages/login.page.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -13,9 +14,6 @@ class HomePage extends StatelessWidget {
         flexibleSpace: Container(
           decoration: BoxDecoration(
               border: new Border.all(color: Colors.transparent, width: 2.0),
-              borderRadius: new BorderRadius.only(
-                  bottomLeft: Radius.circular(25.0),
-                  bottomRight: Radius.circular(25.0)),
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -28,8 +26,8 @@ class HomePage extends StatelessWidget {
         title: Center(
           child: SizedBox(
             width: 100,
-            height: 70,
-            child: Image.asset("assets/logo.png"),
+            height: 60,
+            child: Image.asset("assets/estimulo_logo.png"),
           ),
         ),
         actions: <Widget>[
@@ -190,56 +188,23 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               ListTile(
-                  leading: Icon(Icons.blur_on, color: Colors.white),
+                  leading: Icon(Icons.account_circle, color: Colors.white),
                   title: Text(
-                    "Capacitação Geral",
+                    "Minha Conta",
                     style: TextStyle(color: Colors.white),
                   ),
-                  subtitle: Text(
-                    "Playlist de vídeos",
-                    style: TextStyle(color: Colors.white54),
-                  ),
-                  trailing: Icon(Icons.arrow_forward, color: Colors.white),
                   onTap: () {}),
               ListTile(
-                  leading: Icon(Icons.device_unknown, color: Colors.white),
-                  title:
-                      Text("Mentoria", style: TextStyle(color: Colors.white)),
-                  subtitle: Text("Mentorias especificas",
-                      style: TextStyle(color: Colors.white54)),
-                  trailing: Icon(Icons.arrow_forward, color: Colors.white),
+                  leading: Icon(Icons.logout, color: Colors.white),
+                  title: Text("Sair", style: TextStyle(color: Colors.white)),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        ),
+                        ModalRoute.withName('/'));
                   }),
-              ListTile(
-                  leading: Icon(Icons.forum, color: Colors.white),
-                  title: Text(
-                    "Acompanhamento",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    "Reports, feedbacks...",
-                    style: TextStyle(color: Colors.white54),
-                  ),
-                  trailing: Icon(Icons.arrow_forward, color: Colors.white),
-                  onTap: () {
-                    Navigator.pop(context);
-                  }),
-              ListTile(
-                leading: Icon(Icons.attach_money, color: Colors.white),
-                title: Text(
-                  "Solicitar apoio financeiro",
-                  style: TextStyle(color: Colors.white),
-                ),
-                subtitle: Text(
-                  "Emprestimos",
-                  style: TextStyle(color: Colors.white54),
-                ),
-                trailing: Icon(Icons.arrow_forward, color: Colors.white),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
             ],
           ),
         ),

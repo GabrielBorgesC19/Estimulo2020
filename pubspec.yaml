@@ -92,6 +92,7 @@ flutter:
     - assets/avatar.png
     - assets/estimulo_logo.png
     - assets/relatorio.png
+    - assets/teacher-avatar.png
     
   fonts:
      - family: Raleway
