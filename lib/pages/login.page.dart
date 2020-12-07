@@ -1,7 +1,7 @@
-import 'package:estimulo2020/controllers/login.controller.dart';
-import 'package:estimulo2020/pages/reset-password.page.dart';
-import 'package:estimulo2020/pages/home.page.dart';
-import 'package:estimulo2020/pages/signup.page.dart';
+import 'package:doglife/controllers/login.controller.dart';
+import 'package:doglife/pages/reset-password.page.dart';
+import 'package:doglife/pages/home.page.dart';
+import 'package:doglife/pages/signup.page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {

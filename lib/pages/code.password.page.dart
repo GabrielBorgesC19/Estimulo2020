@@ -1,5 +1,5 @@
-import 'package:estimulo2020/controllers/code.password.controller.dart';
-import 'package:estimulo2020/pages/password.redifined.page.dart';
+import 'package:doglife/controllers/code.password.controller.dart';
+import 'package:doglife/pages/password.redifined.page.dart';
 import 'package:flutter/material.dart';
 
 class CodePasswordPage extends StatelessWidget {
