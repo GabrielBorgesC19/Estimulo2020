@@ -98,6 +98,7 @@ flutter:
     - assets/profile-picture.png
     - assets/business-man-avatar.png
     - assets/reset-password-icon.png
+    - assets/report.png
     
   fonts:
      - family: Raleway

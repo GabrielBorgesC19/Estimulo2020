@@ -1,4 +1,6 @@
 import 'package:doglife/pages/login.page.dart';
+import 'package:doglife/pages/menumentor.page.dart';
+import 'package:doglife/pages/reports.page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

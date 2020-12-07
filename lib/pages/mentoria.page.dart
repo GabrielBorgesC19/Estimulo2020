@@ -1,3 +1,4 @@
+import 'package:doglife/pages/home.page.dart';
 import 'package:flutter/material.dart';
 
 class Mentoria extends StatelessWidget {
@@ -118,6 +119,11 @@ class Mentoria extends StatelessWidget {
                         child: FlatButton(
                           child: Text('VOLTAR PARA A TELA PRINCIPAL',
                               style: TextStyle(color: Colors.white)),
+                          onPressed: () {
+                            Navigator.pop(
+                              context,
+                            );
+                          },
                         ),
                       ),
                     ],
