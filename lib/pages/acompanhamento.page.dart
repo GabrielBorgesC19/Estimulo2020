@@ -97,30 +97,6 @@ class Acompanhamento extends StatelessWidget {
                     Container(
                         child: Text('Reports sobre o cu do arthur',
                             style: TextStyle(color: Colors.black))),
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color(0xFFF525aaff),
-                            Color(0XFFFF66FF),
-                          ],
-                        ),
-                      ),
-                      child: FlatButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Reports(),
-                            ),
-                          );
-                        },
-                        child: Icon(Icons.add, color: Colors.white),
-                      ),
-                    ),
                   ])),
               SizedBox(height: 10),
               Container(
@@ -143,22 +119,6 @@ class Acompanhamento extends StatelessWidget {
                     Container(
                         child: Text('Reports sobre o cu do arthur',
                             style: TextStyle(color: Colors.black))),
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color(0xFFF525aaff),
-                            Color(0XFFFF66FF),
-                          ],
-                        ),
-                      ),
-                      child: FlatButton(
-                        child: Icon(Icons.add, color: Colors.white),
-                      ),
-                    ),
                   ])),
               SizedBox(height: 10),
               Container(
@@ -181,23 +141,33 @@ class Acompanhamento extends StatelessWidget {
                     Container(
                         child: Text('Reports sobre o cu do arthur',
                             style: TextStyle(color: Colors.black))),
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color(0xFFF525aaff),
-                            Color(0XFFFF66FF),
-                          ],
-                        ),
-                      ),
-                      child: FlatButton(
-                        child: Icon(Icons.add, color: Colors.white),
-                      ),
-                    ),
                   ])),
+              SizedBox(height: 20),
+              Align(
+                  child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color(0xFFF525aaff),
+                      Color(0XFFFF66FF),
+                    ],
+                  ),
+                ),
+                child: FlatButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Reports(),
+                      ),
+                    );
+                  },
+                  child: Icon(Icons.add, color: Colors.white),
+                ),
+              )),
             ])
           ]),
         ]),

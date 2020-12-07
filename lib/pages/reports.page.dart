@@ -1,3 +1,4 @@
+import 'package:doglife/pages/acompanhamento.page.dart';
 import 'package:flutter/material.dart';
 
 class Reports extends StatelessWidget {
@@ -6,7 +7,7 @@ class Reports extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0XFFECF0F3),
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: [
             Stack(
               children: [
@@ -29,24 +30,44 @@ class Reports extends StatelessWidget {
                   ),
                   alignment: Alignment(0.0, -1),
                 ),
+                InkWell(
+                    child: Container(
+                        child: FlatButton(
+                  child: Icon(Icons.arrow_back, color: Colors.white),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ))),
+                Align(
+                  child: Container(
+                    margin: EdgeInsets.only(top: 8),
+                    child: Text(
+                      'TELA DE REPORTS',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
                 Container(
-                  margin: EdgeInsets.only(top: 40, left: 80, right: 80),
+                  margin: EdgeInsets.only(top: 50, left: 80, right: 80),
                   child: Image.asset('assets/report.png'),
                 ),
               ],
             ),
-            SizedBox(height: 10),
-            Text('Qual o assunto seu report?',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold)),
+            SizedBox(height: 30),
+            Align(
+                child: Text('Qual o assunto do seu report?',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold))),
             Container(
               height: 40,
               margin: EdgeInsets.all(20),
               child: TextFormField(
                 keyboardType: TextInputType.text,
-                obscureText: true,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -60,23 +81,18 @@ class Reports extends StatelessWidget {
                     borderSide:
                         new BorderSide(color: Colors.white30, width: 2.0),
                   ),
-                  labelText: "Digite o assunto do seu report",
-                  labelStyle: TextStyle(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20,
-                  ),
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            Text(
-              'Escreva sobre o relatorio',
+            SizedBox(height: 5),
+            Align(
+                child: Text(
+              'Descrição do Report',
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
-            ),
+            )),
             Container(
               margin: EdgeInsets.all(20),
               child: TextFormField(
@@ -95,16 +111,21 @@ class Reports extends StatelessWidget {
                     borderSide:
                         new BorderSide(color: Colors.white30, width: 2.0),
                   ),
-                  labelText: "Digite o assunto do seu report",
-                  labelStyle: TextStyle(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20,
-                  ),
                 ),
               ),
             ),
-            FlatButton(child: Icon(Icons.done, color: Colors.blue[200]))
+            Container(
+              decoration: BoxDecoration(
+                color: Color(0xFFF525aaff),
+                shape: BoxShape.circle,
+              ),
+              child: FlatButton(
+                child: Icon(Icons.done, color: Colors.white),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),
           ],
         ),
       ),

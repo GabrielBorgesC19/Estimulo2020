@@ -1,9 +1,8 @@
 import 'package:doglife/pages/acompanhamento.page.dart';
 import 'package:doglife/pages/capacitacao.page.dart';
 import 'package:doglife/pages/login.page.dart';
-import 'package:doglife/pages/mentoria.page.dart';
+import 'package:doglife/pages/menu.mentoria.page.dart';
 import 'package:doglife/pages/profile.page.dart';
-import 'package:doglife/pages/menumentor.page.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -146,7 +145,7 @@ class HomePage extends StatelessWidget {
                           //
                           context,
                           MaterialPageRoute(
-                            builder: (context) => MenuMentor(),
+                            builder: (context) => MenuMentoria(),
                           ),
                         );
                       },
@@ -175,10 +174,6 @@ class HomePage extends StatelessWidget {
                   },
                 ),
               ],
-            ),
-            Container(
-              padding: EdgeInsets.only(top: 60, left: 40, right: 40),
-              child: FlatButton(),
             ),
           ],
         ),
