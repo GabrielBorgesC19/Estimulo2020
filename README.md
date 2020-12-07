@@ -1,4 +1,4 @@
-# estimulo 2020
+# Estimulo 2020
 
 A new Flutter project.
 
