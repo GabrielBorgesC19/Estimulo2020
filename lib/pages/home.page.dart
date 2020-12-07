@@ -1,6 +1,7 @@
 import 'package:doglife/pages/acompanhamento.page.dart';
 import 'package:doglife/pages/capacitacao.page.dart';
 import 'package:doglife/pages/mentoria.page.dart';
+import 'package:doglife/pages/menumentor.page.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -8,9 +9,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[100],
+      backgroundColor: Colors.blue[50],
       appBar: AppBar(
-        backgroundColor: Colors.blue[100],
+        backgroundColor: Colors.blue[50],
         shadowColor: Colors.transparent,
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -47,7 +48,7 @@ class HomePage extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Colors.blue[100],
+            Colors.blue[50],
             Colors.white,
           ],
         )),
@@ -139,7 +140,7 @@ class HomePage extends StatelessWidget {
                           //
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Mentoria(),
+                            builder: (context) => MenuMentor(),
                           ),
                         );
                       },

@@ -94,6 +94,7 @@ flutter:
     - assets/relatorio.png
     - assets/mentoria2.png
     - assets/mentoria3.png
+    - assets/report.png
     
   fonts:
      - family: Raleway
