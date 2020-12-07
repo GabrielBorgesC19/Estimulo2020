@@ -75,7 +75,7 @@ class Acompanhamento extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Container(
                   margin: EdgeInsets.all(10),
@@ -93,9 +93,9 @@ class Acompanhamento extends StatelessWidget {
                   ),
                   child: Row(children: [
                     Container(
-                        height: 90, child: Image.asset('assets/relatorio.png')),
+                        height: 70, child: Image.asset('assets/relatorio.png')),
                     Container(
-                        child: Text('Reports sobre o cu do arthur',
+                        child: Text('Report 1',
                             style: TextStyle(color: Colors.black))),
                   ])),
               SizedBox(height: 10),
@@ -115,9 +115,9 @@ class Acompanhamento extends StatelessWidget {
                   ),
                   child: Row(children: [
                     Container(
-                        height: 90, child: Image.asset('assets/relatorio.png')),
+                        height: 70, child: Image.asset('assets/relatorio.png')),
                     Container(
-                        child: Text('Reports sobre o cu do arthur',
+                        child: Text('Report 2',
                             style: TextStyle(color: Colors.black))),
                   ])),
               SizedBox(height: 10),
@@ -137,12 +137,13 @@ class Acompanhamento extends StatelessWidget {
                   ),
                   child: Row(children: [
                     Container(
-                        height: 90, child: Image.asset('assets/relatorio.png')),
+                        height: 70, child: Image.asset('assets/relatorio.png')),
                     Container(
-                        child: Text('Reports sobre o cu do arthur',
+                        child: Text('Report 3',
+                            textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.black))),
                   ])),
-              SizedBox(height: 20),
+              SizedBox(height: 60),
               Align(
                   child: Container(
                 decoration: BoxDecoration(
