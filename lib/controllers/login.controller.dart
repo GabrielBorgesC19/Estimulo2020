@@ -20,10 +20,11 @@ class LoginController {
     );
 
     if (response.statusCode == 200) { 
+      final bodyParsed = json.decode(response.body);
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => HomePage(),
+          builder: (context) => HomePage(bodyParsed["response"]["token"]),
         ),
       );
     } else {

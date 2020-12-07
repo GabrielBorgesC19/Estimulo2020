@@ -5,26 +5,37 @@ import 'package:flutter/material.dart';
 class CodePasswordPage extends StatelessWidget {
   final _codePasswordController = CodePasswordController();
   final _recoveryCodeController = TextEditingController();
-  final String emailAddress; 
+  final String emailAddress;
 
-  CodePasswordPage(this.emailAddress){
-
-  }
+  CodePasswordPage(this.emailAddress) {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        automaticallyImplyLeading: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          color: Colors.white,
-          onPressed: () => Navigator.pop(context, false),
-        ),
-      ),
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(40.0),
+          child: AppBar(
+            backgroundColor: Color(0xFFF525aaff),
+            shadowColor: Colors.transparent,
+            automaticallyImplyLeading: true,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              color: Colors.white,
+              onPressed: () => Navigator.pop(context, false),
+            ),
+          )),
       body: Container(
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
-        color: Colors.deepPurple,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            stops: [0.3, 1],
+            colors: [
+              Color(0xFFF525aaff),
+              Color(0XFFFF66FF),
+            ],
+          ),
+        ),
         child: ListView(
           children: <Widget>[
             Column(
@@ -34,8 +45,8 @@ class CodePasswordPage extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        width: 100,
-                        height: 100,
+                        width: 200,
+                        height: 200,
                         child: Image.asset("assets/reset-password-icon.png"),
                       ),
                       SizedBox(
@@ -91,15 +102,7 @@ class CodePasswordPage extends StatelessWidget {
                         height: 60,
                         alignment: Alignment.centerLeft,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            stops: [0.3, 1],
-                            colors: [
-                              Color(0xFFF525aaff),
-                              Color(0XFFF92B7F),
-                            ],
-                          ),
+                          color: Color(0XFF5BC8F5),
                           borderRadius: BorderRadius.all(
                             Radius.circular(5),
                           ),
@@ -116,7 +119,8 @@ class CodePasswordPage extends StatelessWidget {
                               textAlign: TextAlign.center,
                             ),
                             onPressed: () {
-                              _codePasswordController.onClickVerify(context, emailAddress, _recoveryCodeController.text);
+                              _codePasswordController.onClickVerify(context,
+                                  emailAddress, _recoveryCodeController.text);
                             },
                           ),
                         ),

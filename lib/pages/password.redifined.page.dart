@@ -15,18 +15,31 @@ class PasswordRedifinedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        automaticallyImplyLeading: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          color: Colors.white,
-          onPressed: () => Navigator.pop(context, false),
-        ),
-      ),
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(40.0),
+          child: AppBar(
+            backgroundColor: Color(0xFFF525aaff),
+            shadowColor: Colors.transparent,
+            automaticallyImplyLeading: true,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              color: Colors.white,
+              onPressed: () => Navigator.pop(context, false),
+            ),
+          )),
       body: Container(
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
-        color: Colors.deepPurple,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            stops: [0.3, 1],
+            colors: [
+              Color(0xFFF525aaff),
+              Color(0XFFFF66FF),
+            ],
+          ),
+        ),
         child: ListView(
           children: <Widget>[
             Column(
@@ -36,8 +49,8 @@ class PasswordRedifinedPage extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        width: 100,
-                        height: 100,
+                        width: 200,
+                        height: 200,
                         child: Image.asset("assets/reset-password-icon.png"),
                       ),
                       SizedBox(
@@ -63,7 +76,8 @@ class PasswordRedifinedPage extends StatelessWidget {
                     children: <Widget>[
                       TextFormField(
                         controller: _passwordController,
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
                         decoration: InputDecoration(
                           labelText: "Digite a nova senha",
                           labelStyle: TextStyle(
@@ -76,7 +90,8 @@ class PasswordRedifinedPage extends StatelessWidget {
                       ),
                       TextFormField(
                         controller: _verifyPasswordController,
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
                         decoration: InputDecoration(
                           labelText: "Confirme a nova senha",
                           labelStyle: TextStyle(
@@ -93,20 +108,7 @@ class PasswordRedifinedPage extends StatelessWidget {
                       Container(
                         height: 60,
                         alignment: Alignment.centerLeft,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            stops: [0.3, 1],
-                            colors: [
-                              Color(0xFFF525aaff),
-                              Color(0XFFF92B7F),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(5),
-                          ),
-                        ),
+                        color: Color(0XFF5BC8F5),
                         child: SizedBox.expand(
                           child: FlatButton(
                             child: Text(
@@ -119,7 +121,12 @@ class PasswordRedifinedPage extends StatelessWidget {
                               textAlign: TextAlign.center,
                             ),
                             onPressed: () {
-                              _passwordRedefinedController.onClickChange(context, emailAddress, recoveryCode, _passwordController.text, _verifyPasswordController.text);
+                              _passwordRedefinedController.onClickChange(
+                                  context,
+                                  emailAddress,
+                                  recoveryCode,
+                                  _passwordController.text,
+                                  _verifyPasswordController.text);
                             },
                           ),
                         ),

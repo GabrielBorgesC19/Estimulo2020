@@ -95,6 +95,9 @@ flutter:
     - assets/teacher-avatar.png
     - assets/mentoria2.png
     - assets/mentoria3.png
+    - assets/profile-picture.png
+    - assets/business-man-avatar.png
+    - assets/reset-password-icon.png
     
   fonts:
      - family: Raleway

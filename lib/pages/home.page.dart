@@ -2,15 +2,23 @@ import 'package:doglife/pages/acompanhamento.page.dart';
 import 'package:doglife/pages/capacitacao.page.dart';
 import 'package:doglife/pages/login.page.dart';
 import 'package:doglife/pages/mentoria.page.dart';
+import 'package:doglife/pages/profile.page.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatelessWidget {
+  String token;
+  HomePage(token) {
+    print(token);
+    this.token = token;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue[100],
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.blue[100],
         shadowColor: Colors.transparent,
         flexibleSpace: Container(
@@ -204,10 +212,16 @@ class HomePage extends StatelessWidget {
               ListTile(
                   leading: Icon(Icons.account_circle, color: Colors.white),
                   title: Text(
-                    "Minha Conta",
+                    "Meu perfil",
                     style: TextStyle(color: Colors.white),
                   ),
-                  onTap: () {}),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProfilePage(token),
+                        ));
+                  }),
               ListTile(
                   leading: Icon(Icons.logout, color: Colors.white),
                   title: Text("Sair", style: TextStyle(color: Colors.white)),

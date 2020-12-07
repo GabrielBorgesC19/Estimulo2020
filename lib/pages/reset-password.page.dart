@@ -29,7 +29,7 @@ class ResetPasswordPage extends StatelessWidget {
             stops: [0.3, 1],
             colors: [
               Color(0xFFF525aaff),
-              Color(0XFFF92B7F),
+              Color(0XFFFF66FF),
             ],
           ),
         ),
@@ -109,7 +109,7 @@ class ResetPasswordPage extends StatelessWidget {
                         height: 60,
                         alignment: Alignment.centerLeft,
                         decoration: BoxDecoration(
-                          color: Colors.blue[600],
+                          color: Color(0XFF5BC8F5),
                           borderRadius: BorderRadius.all(
                             Radius.circular(5),
                           ),

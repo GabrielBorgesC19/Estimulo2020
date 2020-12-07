@@ -90,6 +90,7 @@ class _CapacitacaoGeralState extends State<CapacitacaoGeral> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
         elevation: 1,
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
@@ -106,10 +107,9 @@ class _CapacitacaoGeralState extends State<CapacitacaoGeral> {
               )),
         ),
         title: Center(
-          child: SizedBox(
-            width: 100,
-            height: 45,
-            child: Image.asset("assets/estimulo_logo.png"),
+          child: Text(
+            "Capacitação Geral",
+            style: TextStyle(color: Colors.white),
           ),
         ),
         actions: <Widget>[
