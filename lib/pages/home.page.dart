@@ -1,8 +1,9 @@
-import 'package:doglife/pages/acompanhamento.page.dart';
-import 'package:doglife/pages/capacitacao.page.dart';
-import 'package:doglife/pages/login.page.dart';
-import 'package:doglife/pages/menu.mentoria.page.dart';
-import 'package:doglife/pages/profile.page.dart';
+import 'package:estimulo2020/pages/acompanhamento.page.dart';
+import 'package:estimulo2020/pages/capacitacao.page.dart';
+import 'package:estimulo2020/pages/login.page.dart';
+import 'package:estimulo2020/pages/menu.mentoria.page.dart';
+import 'package:estimulo2020/pages/profile.page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 

@@ -1,4 +1,4 @@
-import 'package:doglife/pages/home.page.dart';
+import 'package:estimulo2020/pages/home.page.dart';
 import 'package:flutter/material.dart';
 
 class Mentoria extends StatelessWidget {

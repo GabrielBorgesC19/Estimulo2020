@@ -1,7 +1,6 @@
-import 'package:doglife/controllers/password.redefined.controller.dart';
-import 'package:doglife/pages/login.page.dart';
+import 'package:estimulo2020/controllers/password.redefined.controller.dart';
+import 'package:estimulo2020/pages/login.page.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class PasswordRedifinedPage extends StatelessWidget {
   final String emailAddress;
@@ -79,23 +78,46 @@ class PasswordRedifinedPage extends StatelessWidget {
                         keyboardType: TextInputType.text,
                         obscureText: true,
                         decoration: InputDecoration(
+                          enabledBorder: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(25.0),
+                            borderSide: new BorderSide(
+                                color: Colors.white30, width: 2.0),
+                          ),
+                          focusedBorder: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(25.0),
+                            borderSide: new BorderSide(
+                                color: Colors.white30, width: 2.0),
+                          ),
                           labelText: "Digite a nova senha",
                           labelStyle: TextStyle(
-                            color: Colors.white60,
+                            color: Colors.white70,
                             fontWeight: FontWeight.w400,
                             fontSize: 20,
                           ),
                         ),
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
+                      SizedBox(
+                        height: 20,
+                      ),
                       TextFormField(
                         controller: _verifyPasswordController,
                         keyboardType: TextInputType.text,
                         obscureText: true,
                         decoration: InputDecoration(
+                          enabledBorder: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(25.0),
+                            borderSide: new BorderSide(
+                                color: Colors.white30, width: 2.0),
+                          ),
+                          focusedBorder: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(25.0),
+                            borderSide: new BorderSide(
+                                color: Colors.white30, width: 2.0),
+                          ),
                           labelText: "Confirme a nova senha",
                           labelStyle: TextStyle(
-                            color: Colors.white60,
+                            color: Colors.white70,
                             fontWeight: FontWeight.w400,
                             fontSize: 20,
                           ),

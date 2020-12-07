@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.doglife">
+    package="com.example.estimulo2020">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
@@ -9,7 +9,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="doglife"
+        android:label="Estimulo 2020"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

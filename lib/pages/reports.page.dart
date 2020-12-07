@@ -1,4 +1,4 @@
-import 'package:doglife/pages/acompanhamento.page.dart';
+import 'package:estimulo2020/pages/acompanhamento.page.dart';
 import 'package:flutter/material.dart';
 
 class Reports extends StatelessWidget {

@@ -16,7 +16,8 @@ class ModuleItem {
   bool isSelected = false;
   String title;
   List<LeassonItem> leassons;
-  ModuleItem(this.title, this.isSelected, this.leassons);
+  String image;
+  ModuleItem(this.title, this.isSelected, this.leassons, this.image);
 }
 
 class CapacitacaoGeral extends StatefulWidget {
@@ -75,12 +76,17 @@ class _CapacitacaoGeralState extends State<CapacitacaoGeral> {
         List.from(["Vendas", "Online"]),
         "Juliano Barra");
     modules = [
-      ModuleItem("Financeiro", true,
-          List.from([leasson1, leasson2, leasson5, leasson6])),
       ModuleItem(
-          "Comunicação e Marketing", false, List.from([leasson3, leasson4])),
-      ModuleItem("Tecnologia e inovação", false, null),
-      ModuleItem("Recursos Humanos", false, List.from([leasson8])),
+          "Financeiro",
+          true,
+          List.from([leasson1, leasson2, leasson5, leasson6]),
+          "assets/financeiro.png"),
+      ModuleItem("Comunicação e Marketing", false,
+          List.from([leasson3, leasson4]), "assets/marketing.png"),
+      ModuleItem(
+          "Tecnologia e inovação", false, null, "assets/recursos_humanos.png"),
+      ModuleItem("Recursos Humanos", false, List.from([leasson8]),
+          "assets/tecnologia_e_inovacao.png"),
     ];
     activeLeassons = modules[0].leassons;
   }
@@ -170,8 +176,8 @@ class _CapacitacaoGeralState extends State<CapacitacaoGeral> {
                     shape: BoxShape.circle,
                     color: Colors.transparent,
                     image: DecorationImage(
-                      image: new ExactAssetImage("assets/senha.png"),
-                      fit: BoxFit.cover,
+                      image: new ExactAssetImage(modules[index].image),
+                      fit: BoxFit.fitWidth,
                     ),
                   ),
                 ),

@@ -236,7 +236,7 @@ class SignupPage extends StatelessWidget {
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                color: Colors.blue[600],
+                color: Color(0XFF5BC8F5),
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),
