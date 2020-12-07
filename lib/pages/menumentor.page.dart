@@ -1,4 +1,4 @@
-import 'package:doglife/pages/mentoria.page.dart';
+import 'package:estimulo2020/pages/mentoria.page.dart';
 import 'package:flutter/material.dart';
 
 class MenuMentor extends StatelessWidget {

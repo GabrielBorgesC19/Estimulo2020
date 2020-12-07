@@ -1,4 +1,4 @@
-package com.example.doglife;
+package com.example.estimulo2020;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:doglife/pages/code.password.page.dart';
-import 'package:doglife/controllers/reset-password.controller.dart';
+import 'package:estimulo2020/pages/code.password.page.dart';
+import 'package:estimulo2020/controllers/reset-password.controller.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   final _resetPasswordController = new ResetPasswordController();

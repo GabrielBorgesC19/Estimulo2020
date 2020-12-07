@@ -1,4 +1,4 @@
-import 'package:doglife/controllers/profile.controller.dart';
+import 'package:estimulo2020/controllers/profile.controller.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {

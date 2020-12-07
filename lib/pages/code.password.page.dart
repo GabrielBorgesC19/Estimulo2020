@@ -1,5 +1,5 @@
-import 'package:doglife/controllers/code.password.controller.dart';
-import 'package:doglife/pages/password.redifined.page.dart';
+import 'package:estimulo2020/controllers/code.password.controller.dart';
+import 'package:estimulo2020/pages/password.redifined.page.dart';
 import 'package:flutter/material.dart';
 
 class CodePasswordPage extends StatelessWidget {
@@ -86,9 +86,19 @@ class CodePasswordPage extends StatelessWidget {
                         controller: _recoveryCodeController,
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                          labelText: "Insira o codigo",
+                          enabledBorder: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(25.0),
+                            borderSide: new BorderSide(
+                                color: Colors.white30, width: 2.0),
+                          ),
+                          focusedBorder: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(25.0),
+                            borderSide: new BorderSide(
+                                color: Colors.white30, width: 2.0),
+                          ),
+                          labelText: "Insira o código",
                           labelStyle: TextStyle(
-                            color: Colors.white60,
+                            color: Colors.white70,
                             fontWeight: FontWeight.w400,
                             fontSize: 20,
                           ),
