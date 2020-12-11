@@ -105,6 +105,10 @@ flutter:
     - assets/marketing.png
     - assets/recursos_humanos.png
     - assets/tecnologia_e_inovacao.png
+    - assets/credito.png
+    - assets/desenhocredito.png
+    - assets/mulhercredito.png
+    - assets/computadorcredito.png
     
   fonts:
      - family: Raleway

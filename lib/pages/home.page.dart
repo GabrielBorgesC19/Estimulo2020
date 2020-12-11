@@ -1,5 +1,6 @@
 import 'package:estimulo2020/pages/acompanhamento.page.dart';
 import 'package:estimulo2020/pages/capacitacao.page.dart';
+import 'package:estimulo2020/pages/form.credito.page.dart';
 import 'package:estimulo2020/pages/login.page.dart';
 import 'package:estimulo2020/pages/mentoria.page.dart';
 import 'package:estimulo2020/pages/menu.mentoria.page.dart';
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[50],
+      backgroundColor: Color(0XFFECF0F3),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.blue[100],
@@ -38,7 +39,7 @@ class HomePage extends StatelessWidget {
         title: Center(
           child: SizedBox(
             width: 100,
-            height: 60,
+            height: 50,
             child: Image.asset("assets/estimulo_logo.png"),
           ),
         ),
@@ -50,15 +51,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Container(
         margin: EdgeInsets.only(top: 60),
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Colors.blue[50],
-            Colors.white,
-          ],
-        )),
+        color: Color(0XFFECF0F3),
         alignment: Alignment(0.0, 1.15),
         child: Column(
           children: [
@@ -147,7 +140,7 @@ class HomePage extends StatelessWidget {
                           //
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Mentoria(),
+                            builder: (context) => MenuMentoria(),
                           ),
                         );
                       },
@@ -182,8 +175,8 @@ class HomePage extends StatelessWidget {
       ),
       drawer: Theme(
         data: Theme.of(context).copyWith(
-          canvasColor: Colors
-              .blue[300], //This will change the drawer background to blue.
+          canvasColor: Color(
+              0XFFECF0F3), //This will change the drawer background to blue.
           //other styles
         ),
         child: Drawer(
@@ -208,10 +201,10 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               ListTile(
-                  leading: Icon(Icons.account_circle, color: Colors.white),
+                  leading: Icon(Icons.account_circle, color: Color(0XFF848788)),
                   title: Text(
                     "Meu perfil",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Color(0XFF848788)),
                   ),
                   onTap: () {
                     Navigator.push(
@@ -221,8 +214,23 @@ class HomePage extends StatelessWidget {
                         ));
                   }),
               ListTile(
-                  leading: Icon(Icons.logout, color: Colors.white),
-                  title: Text("Sair", style: TextStyle(color: Colors.white)),
+                  leading: Icon(Icons.attach_money, color: Color(0XFF848788)),
+                  title: Text(
+                    "Solicitar crédito",
+                    style: TextStyle(color: Color(0XFF848788)),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FormCredito(),
+                      ),
+                    );
+                  }),
+              ListTile(
+                  leading: Icon(Icons.logout, color: Color(0XFF848788)),
+                  title:
+                      Text("Sair", style: TextStyle(color: Color(0XFF848788))),
                   onTap: () {
                     Navigator.pushAndRemoveUntil(
                         context,
